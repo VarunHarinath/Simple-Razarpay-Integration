@@ -25,8 +25,6 @@ export const paymentVerification = async (req, res) => {
     .createHmac("sha256", process.env.RAZERPAY_SECRET_KEY)
     .update(body.toString())
     .digest("hex");
-  console.log(`sig recieved ${razorpay_signature}`);
-  console.log(`sig generated ${expectedSignature}`);
 
   const isAuthentic = expectedSignature == razorpay_signature;
 
