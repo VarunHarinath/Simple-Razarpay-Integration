@@ -16,7 +16,8 @@ app.get("/api/getkey", (req, res) =>
     key: process.env.RAZERPAY_API_KEY,
   })
 );
+app.all("*", (req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
 
-app.get("/", (req, res) =>
-  res.send("Home Page")
-);
+app.get("/", (req, res) => res.send("Home Page"));
