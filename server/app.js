@@ -16,3 +16,7 @@ app.get("/api/getkey", (req, res) =>
     key: process.env.RAZERPAY_API_KEY,
   })
 );
+
+app.get("/", (req, res) =>
+  res.send("Home Page")
+);
